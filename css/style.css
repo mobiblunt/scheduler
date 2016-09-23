@@ -1,0 +1,42 @@
+button {
+	margin-left: 50%;
+}
+
+.nav li {
+   background-color: #ffff66;
+}
+
+.task {
+	background-color: #ffff66;
+	margin-left: auto;
+}
+
+.task button {
+	margin-left: 100%;
+}
+
+.jumbotron {
+	background-color: #ffff66;
+}
+
+#addNewButton {
+	margin-left: 100%;
+	
+}	
+#logo {
+	margin-left: 20px;
+
+}
+#header {
+	background-color: #502d16;
+}
+#scheduler {
+	background-color: #502d16;
+}
+#addNewBtn {
+	background-color: #ffff66;
+}
+ #map {
+        width: 100%;
+        height: 400px;
+     }

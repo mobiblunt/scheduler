@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scheduler</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<script src="js/jquery-1.12.0.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	
+</head>
+<body>
+<div class="container col-sm-6 col-sm-offset-3">
+<nav class="navbar navbar-default" id="header">
+<div class="container-fluid">
+<div class="navbar-header" style="margin-bottom:40px" >
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+
+
+	<img src="" class="navbar-brand"></a>
+	</div>
+	
+	<div class="collapse navbar-collapse" id="myNavbar">
+	
+		<ul class='nav nav-pills navbar-right' style="margin-top:15px" >
+
+	    <li id="home"  class"active"><a data-toggle="pill" href="#scheduler">Scheduler</a></li>
+		<li id="addNewPill"><a data-toggle="pill" href="#addNew"><span class="glyphicon glyphicon-pencil"></span>Add New</a></li>
+		<li><a data-toggle="pill" href="#viewAll"><span class="glyphicon glyphicon-book"></span>View All</a></li>
+		<li><a data-toggle="pill" href="#calender">Map</a></li>
+		<li><a data-toggle="pill" href="#addressBook">Address Book</a></li>
+	</ul>
+	</div>
+	
+
+
+</div>
+	</nav>
+	
+
+	
+	<div class="tab-content">
+
+		<div class="well tab-pane fade in active" id="scheduler">
+		
+			<div class="container-fluid" >
+				<div class="jumbotron" >
+					<h1>Scheduler</h1>      
+					<p>All your activities in one place</p>
+				</div>
+
+				<!--div class="row"-->
+
+					<h3 style="color: #ac9393">Todays Schedule:</h3>
+					<div class="row">
+
+
+						<!--div class="row"-->
+						<div class="task col-md-6">
+
+
+							<div class="col-md-8" style="margin-top:20px" id="todaySchedule">
+
+								<p>No Entries yet..</p>
+
+
+
+
+							</div>
+
+						</div>
+						<!--/div-->
+						<!--div class="row"-->
+							<div class="col-md-6">
+
+								<a data-toggle="pill" href="#addNew" ><button id="addNewBtn" style="margin-top: 20px" class="btn btn-glorious">Add new</button></a>
+								</div>
+								<div class="col-md-12 col-md-offset-8" style="margin-top: 20px" >
+								<ul class="list-unstyled list-inline list-social-icons">
+                    <li>
+                        <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-linkedin-square fa-2x"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
+                    </li>
+                </ul>
+							
+						</div>
+						
+					<hr>
+                     
+
+
+				</div><!--end of row-->
+			</div>
+			
+		</div>
+
+
+		<div class="well tab-pane fade" id="addNew">
+			<div style="margin-top: 20px" class="container-fluid" >
+				<h3>New Schedule</h3>
+				<form class="form form-group" name="myForm" id="form">
+
+				    <label for="">Date:</label><input type="date" class="form-control" name="date" id="edate">
+					<label for="">Start Time:</label> <input type="time" class="form-control" name="startTime" id="sTime">
+					<label for="">End Time:</label> <input type="time" class="form-control" name="endTime" id="eTime">
+					<label for="">Collaborators:</label> <select name="collaborators" class="form-control">
+
+					    <option >None</option>
+	                    <option>John</option>
+	                    <option>Frank</option>
+	                    <option>Mary</option>
+	                    <option>Joseph</option>
+				    </select>
+					<label for="">Description:</label> <textarea name="desc" id="" cols="30" rows="10" class="form-control" id="description"></textarea>
+					<hr>
+					<select name="reminder" class="form-control">
+
+					    <option >No Alarm</option>
+	                    <option>Alarm once</option>
+	                    <option>Repeat daily</option>
+	                    <option>Repeat monthly</option>
+	                    <option>Repeat yearly</option>
+				    </select>
+					
+					<hr>
+					<button  type="button" style="width: 50%" class="btn btn-primary form-control addbutton" onclick="return (addSchedule());">Add Event</button>
+
+				</form>
+			</div>
+		</div>
+
+
+		<div class = "well tab-pane fade view-all" id="viewAll">
+		<div style="margin-top: 20px" class="container-fluid">
+		<h3>All Schedules</h3>
+		<div class="row task">
+							<div class="col-md-7">
+
+								<p id="display" style="margin-top: 20px">
+								<label for="">No Entries yet..</label>
+									
+								</p>
+
+							</div>
+
+						</div>
+		
+			
+
+		</div>
+			
+
+
+
+		</div>
+
+		<div class = "well tab-pane fade" id="calender">
+		<div style="margin-top: 20px" class="container-fluid">
+		 <div class="row">
+            <!-- Map Column -->
+            <div class="col-md-8">
+                <!-- Embedded Google Map -->
+                <!--iframe style="margin-top: 20px" width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe-->
+                <div id="map"></div>
+            </div>
+            <!-- Contact Details Column -->
+            <div class="col-md-4">
+                <h3>Search Locations</h3>
+                
+            </div>
+        </div>
+		
+
+		</div>
+			
+
+
+
+		</div>
+
+		<div class = "well tab-pane fade" id="addressBook">
+		<div style="margin-top: 20px" class="container-fluid">
+		<div class="row">
+			<div class="col-md-5">
+				<h3>Address Book</h3>
+			</div>
+            <div class="col-md-4">
+			<button  id="addNewButton" type="button" style="margin-top: 15px" class="btn btn-success form-control addbutton" data-toggle="modal" data-target="#myModal">Add Contact</button>
+		</div>
+		</div>
+		
+
+		
+		<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add New Contact</h4>
+        </div>
+        <div class="modal-body">
+          <form class="form form-group" name="myForm2" id="form2">
+          <label for="">Name:</label><input type="text" class="form-control" name="addName" id="eName" required="">
+          <label for="">Email:</label><input type="email" class="form-control" name="addEmail" id="email" required="">
+          <label for="">Phone No:</label><input type="text" class="form-control" id="phoneNo" required="">
+        
+		</form>
+
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" onclick="return (addContact());">Add</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+ <!-- end of modal-->
+
+ <div class="row task" style="margin-top: 20px">
+							<div class="col-md-7">
+
+								
+								<table class="table table-hover table-responsive" style="width: 600px margin-top: 20px">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone No</th>
+      </tr>
+    </thead>
+    <tbody id="tbody">
+    
+      
+    </tbody>
+  </table>
+</div>
+
+						
+
+
+				
+
+		
+
+		</div>
+			
+
+
+
+		</div>
+	
+	
+
+	</div>
+
+
+
+	
+
+
+	<footer>
+		<ul class="list-inline">
+			<li>&copy; Mobi Blunt 2016</li>
+			<li><a href="#">Privacy</a></li>
+			<li><a href="mailto:mobiblunt@gmail.com">Contact</a></li>
+
+		</ul>
+	</footer>
+	</div>
+	<script src="js/main.js"></script>
+	<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDFaXDq02gxTyGMSeFfiPlU9dG_zX0EgCo&callback=initMap">
+    </script>
+</body>
+</html>
